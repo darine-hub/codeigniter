@@ -14,29 +14,22 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name','avatar','email','password'];
+    protected $allowedFields    = ['name','email','mobile','password','code','active'];
 
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+    protected $userTimestamps = true ;
+    protected $beforeInsert = ['beforeInsert'];
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    public function beforeInsert(array $data):array{
+
+      if(isset($data['data']['password'])){
+        $planPassword = $data['data']['password'];
+        $data['data']['password']=password_hash($planPassword,PASSWORD_BCRYPT);
+
+
+      }
+      return $data;
+
+    }
+    
 }

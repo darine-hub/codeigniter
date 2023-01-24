@@ -70,6 +70,20 @@ if(!empty(session()->getFlashData('success'))){
         </div>
 
         <div class="form-group mb-3">
+            <label for=""> Mobile </label>
+            <input type="text" 
+                   class="form-control"
+                   name="mobile"
+                   value="<?= set_value('mobile');?>"
+                   placeholder="mobile" >
+                   <span class="text-danger text-sm">
+
+                   <?= isset($validation) ? display_form_errors($validation,'mobile'): ''?>
+                   </span>
+        </div>
+
+
+        <div class="form-group mb-3">
             <label for=""> Password </label>
             <input type="password" 
                    class="form-control"
@@ -82,19 +96,7 @@ if(!empty(session()->getFlashData('success'))){
                    </span>
         </div>
 
-        <div class="form-group mb-3">
-            <label for=""> Confirm Password </label>
-            <input type="password" 
-                   class="form-control"
-                   name="passwordConf"
-                   value="<?= set_value('passwordConf');?>"
-                   placeholder="Confirm Password Here" >
-                   <span class="text-danger text-sm">
-
-                   <?= isset($validation) ? display_form_errors($validation,'passwordConf'): ''?>
-                   </span>
-        </div>
-
+        
         <div class="form-group mb-3">
            
             <input type="submit" 

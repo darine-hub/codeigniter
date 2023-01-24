@@ -167,10 +167,11 @@ $message = 	"
 
 if($email->send())
 {
-    $session->set_flashdata('message','Activation code sent to email');
+    $response = 'Email successfully sent';
 }
 else{
-    $session->set_flashdata('message', $this->email->print_debugger());
+    $data = $email->printDebugger(['headers']);
+            $response ='Email send failed';
 }
 
 

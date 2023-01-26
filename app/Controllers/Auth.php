@@ -175,8 +175,8 @@ else{
 }
 
 
+return view ('auth/signin');
 
-redirect('register');
 
 
 }

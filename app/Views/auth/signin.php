@@ -45,6 +45,7 @@ if(!empty(session()->getFlashData('success'))){
                 </div>
                 <span>or use your email for registration</span>
                 <div class="input-icons">
+                    <div>
             <i class="fa fa-user icon"></i>
             <input class="input-field" type="text" placeholder="Name" name="name"
                   >
@@ -54,6 +55,7 @@ if(!empty(session()->getFlashData('success'))){
 
 <?= isset($validation) ? display_form_errors($validation,'name'): ''?>
 </span>
+</div>
 <div>
             <i class="fa fa-envelope icon"></i>
             <input class="input-field" type="email" placeholder="Email" name="email"
@@ -75,6 +77,7 @@ if(!empty(session()->getFlashData('success'))){
 </span>
 
 </div>
+<div>
             <i class="fa fa-lock icon"></i>
             <input class="input-field" type="password" placeholder="Password"    name="password"
                    >
@@ -82,6 +85,7 @@ if(!empty(session()->getFlashData('success'))){
 
 <?= isset($validation) ? display_form_errors($validation,'password'): ''?>
 </span>
+</div>
         </div>
                 <button onclick="phoneauth()">Sign Up</button><br><br>
                 <span>Already have an account ?</span><span id="signIn" style="color:#40f2fe">SIGN IN</span>

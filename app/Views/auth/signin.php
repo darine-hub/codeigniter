@@ -49,28 +49,31 @@ if(!empty(session()->getFlashData('success'))){
             <input class="input-field" type="text" placeholder="Name" name="name"
                   >
 
-                   <span class="text-danger text-sm">
+                 <span style="color:red; " >
+                   
 
 <?= isset($validation) ? display_form_errors($validation,'name'): ''?>
 </span>
             <i class="fa fa-envelope icon"></i>
             <input class="input-field" type="email" placeholder="Email" name="email"
                  >
-                   <span class="text-danger text-sm">
+                 <span style="color:red; " >
+                   
 
 <?= isset($validation) ? display_form_errors($validation,'email'): ''?>
 </span>
             <i class="fa fa-phone icon"></i>
             <input class="input-field" type="text" placeholder="Mobile"  name="mobile"
                   >
-                   <span class="text-danger text-sm">
+                 <span style="color:red; " >
+                  
 
 <?= isset($validation) ? display_form_errors($validation,'mobile'): ''?>
 </span>
             <i class="fa fa-lock icon"></i>
             <input class="input-field" type="password" placeholder="Password"    name="password"
                    >
-                   <span class="text-danger text-sm">
+                   <span style="color:red; " >
 
 <?= isset($validation) ? display_form_errors($validation,'password'): ''?>
 </span>
@@ -101,7 +104,7 @@ if(!empty(session()->getFlashData('success'))){
             <i class="fa fa-envelope icon"></i>
             <input class="input-field" type="email" placeholder="Email"  name="email"
           >
-                 <span style="color:red" >
+                 <span style="color:red; " >
 
 <?= isset($validation) ? display_form_errors($validation,'email'): ''?>
 </span> 

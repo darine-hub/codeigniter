@@ -81,7 +81,7 @@ $validated = $this->validate([
 
 if (!$validated)
 {
-    return view ('auth/register',['validation'=> $this->validator]);
+    return view ('auth/signin',['validation'=> $this->validator]);
 
 }
 
